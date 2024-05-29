@@ -1,7 +1,6 @@
 ```
 /         - dashboard (widgets)
 /account  - auth page
-/profile  - profile page
 /project  - project page
 /issue    - issue page
 ```
@@ -13,8 +12,11 @@
 ## Login Page
 - [ ] Fix the UI
 
-## Profile Page
-- [ ] Not needed for now
+## Account Page
+- [ ] /         - Not needed for now
+- [ ] /Register
+- [ ] /Login
+- [ ] /Logout
 
 ## Project Page
 - [ ] Post, Subscribe
