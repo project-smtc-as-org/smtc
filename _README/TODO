@@ -1,0 +1,23 @@
+```
+/         - dashboard (widgets)
+/account  - auth page
+/profile  - profile page
+/project  - project page
+/issue    - issue page
+```
+
+## The Site Page Template
+- [ ] NavBar Links
+  - [ ] Home, Projects (sub / new), Issues (sub / new), Auth
+
+## Login Page
+- [ ] Fix the UI
+
+## Profile Page
+- [ ] Not needed for now
+
+## Project Page
+- [ ] Post, Subscribe
+
+## Issue Page
+- [ ] Post, Subscribe
