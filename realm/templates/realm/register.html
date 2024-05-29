@@ -1,0 +1,13 @@
+{% extends 'j1bun/base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<form
+  method="POST" action="{% url 'realm-register' %}">
+  {% csrf_token %}
+  <input type="hidden" name="next" value="{{ request.GET.next }}" />
+  {{ form }}
+  <input type="submit" value="Register" />
+</form>
+{% endblock %}

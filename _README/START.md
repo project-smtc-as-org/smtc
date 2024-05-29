@@ -5,7 +5,6 @@ poetry install
 
 export APP_SECRET_KEY='Your SECRET_KEY'
 
-poetry run python manage.py makemigrations
 poetry run python manage.py migrate
 poetry run python manage.py runserver
 ```

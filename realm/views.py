@@ -1,43 +1,36 @@
-""" Account :: Authentication
+""" Realm (Autherization)
 """
 from functools import partial
 
-from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from django.views.decorators.http import require_http_methods
 
-from smtc.utils import redirect_to_app_index, strip_form_values
+from sh1chan.utils import redirect_to_app_index
 
 from . import forms
 
 
-redirect_to_app_index = partial(redirect_to_app_index, 'account-index')
+# NOTE: redirecting to the project index
+redirect_to_app_index = partial(redirect_to_app_index, 'index-index')
 
 
 @login_required
-@require_http_methods(["GET"])
 def index(request):
-  """ Index page
+  """ Index page, list of sessions, session manipulation
   """
-  return render(
-    request,
-    'account/index.html',
-    {
-    }
-  )
+  return HttpResponse('<h1>Index</h1>')
 
 
-@require_http_methods(["GET", "POST"])
 def register(request):
   if request.method == "POST":
     form = forms.UserForm(request.POST)
-    form_data = strip_form_values(form.data)
-    username = form_data.get("username")
-    password = form_data.get("password")
+    username = form.data["username"]
+    password = form.data["password"]
     if all((username, password)):
       user = User.objects.filter(username=username)
       if not user.exists():
@@ -48,26 +41,24 @@ def register(request):
 
   return render(
     request,
-    'account/register.html',
+    'realm/register.html',
     {
-      "form": form,
-      "al_register": True,
+      "form": form
     }
   )
 
 
-@require_http_methods(["GET", "POST"])
 def login(request):
   """ Login page
   """
-  if request.user.is_authenticated:
+  session_user = request.user
+  if session_user and session_user.is_authenticated:
     auth_logout(request)
 
   if request.method == "POST":
     form = forms.UserForm(request.POST)
-    form_data = strip_form_values(form.data)
-    username = form_data.get("username")
-    password = form_data.get("password")
+    username = form.data["username"]
+    password = form.data["password"]
     if all((username, password)):
       user = authenticate(username=username, password=password)
       if user is not None:
@@ -84,16 +75,14 @@ def login(request):
 
   return render(
     request,
-    'account/login.html',
+    'realm/login.html',
     {
-      "form": form,
-      "al_login": True
+      "form": form
     }
   )
 
 
 @login_required
-@require_http_methods(["GET"])
 def logout(request):
   """ Logout page
   """
