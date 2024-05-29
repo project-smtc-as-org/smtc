@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "smtc"
+version = "0.0.1"
+description = "Show Me The Code"
+authors = ["Yóunǎi <c0d3r.nodiru.gaji@gmail.com>"]
+license = "AGPL-3.0 license"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^5.0.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

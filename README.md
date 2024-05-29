@@ -5,18 +5,21 @@ Web Application (Networking)
 
 #### Quick start
 ```bash
+poetry env use python3.11
+poetry install
+
+
 export APP_SECRET_KEY='Your SECRET_KEY'
 
-pip install -r requirements.txt
 
-python manage.py makemigrations
-python manage.py migrate
-
-python manage.py runserver
+poetry run python manage.py makemigrations
+poetry run python manage.py migrate
+poetry run python manage.py runserver
 ```
 
 
 #### Dependencies
 ```bash
-python -V	# Python 3.11.4
+poetry -V   # Poetry 1.8.2
+python -V	# Python 3.11.8
 ```
