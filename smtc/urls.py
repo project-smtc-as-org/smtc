@@ -22,5 +22,4 @@ urlpatterns = [
 
     path('account/', include('account.urls')),
     path('project/', include('project.urls')),
-    path('issue/', include('issue.urls')),
 ]
