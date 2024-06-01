@@ -22,7 +22,8 @@
       - [ ] LogOut
 
 ## Account Page
-- [ ] account/         - Not needed for now
+- [ ] account
+  - [ ] / - Not needed for now
     - [ ] GET
       - [ ] UI
   - [ ] /Register
@@ -36,19 +37,23 @@
   - [x] /Logout
 
 ## Project Page
-- [ ] project/
-  - [ ] GET
-    - [ ] Created (owned) Project
-    - [ ] Subscribed Project
-  - [ ] POST
-    - [ ] New Issue
-    - [ ] Subscribe to the Project
+- [ ] project
+  - [ ] /
+    - [ ] GET
+      - [ ] Created (owned) Project
+      - [ ] Subscribed Project
+    - [ ] POST
+      - [ ] New Issue
+      - [ ] Subscribe to the Project
 
 ## (Project) Issue Page
-- [ ] project/issue/
-  - [ ] GET
-    - [ ] Created (owned) Issue
-    - [ ] Subscribed Issue
-  - [ ] POST
-    - [ ] New Issue
-    - [ ] Subscribe to an Issue
+- [ ] project
+  - [ ] /
+    - [ ] GET
+      - [ ] Created (owned) Issue
+      - [ ] Subscribed Issue
+    - [ ] POST
+      - [ ] New Issue
+      - [ ] Subscribe to an Issue
+  - [ ] created/
+  - [ ] followed/
