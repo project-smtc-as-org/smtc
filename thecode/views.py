@@ -1,4 +1,4 @@
-""" Project :: Project and Issue
+""" TheCode :: Project and Issue
 """
 from functools import partial
 
@@ -10,7 +10,7 @@ from smtc.utils import redirect_to_app_index, strip_form_values
 from . import models
 
 
-redirect_to_app_index = partial(redirect_to_app_index, 'project-index')
+redirect_to_app_index = partial(redirect_to_app_index, 'thecode-index')
 
 
 @login_required
@@ -28,7 +28,7 @@ def index(request, code: int | None = None):
 
   return render(
     request,
-    'project/index.html',
+    'thecode/index.html',
     {
       'code': code
       'codes': models.Code.objects.all().exclude(created_by=request.user),

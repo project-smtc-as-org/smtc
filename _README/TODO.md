@@ -36,21 +36,11 @@
     - [x] POST
   - [x] /Logout
 
-## Project Page
-- [ ] project
+## Code Page
+- [ ] code
   - [ ] /
     - [ ] GET
-      - [ ] Created (owned) Project
-      - [ ] Subscribed Project
-    - [ ] POST
-      - [ ] New Issue
-      - [ ] Subscribe to the Project
-
-## (Project) Issue Page
-- [ ] project
-  - [ ] /
-    - [ ] GET
-      - [ ] Created (owned) Issue
+      - [ ] Created by others
       - [ ] Subscribed Issue
     - [ ] POST
       - [ ] New Issue

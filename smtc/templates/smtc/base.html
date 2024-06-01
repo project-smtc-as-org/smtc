@@ -13,8 +13,7 @@
   <body>
     <ul class="navbar">
       {# <li><a href="{% url 'index-index' %}">/Index</a></li> #}
-      <li><a href="{% url 'project-index' %}">/Project</a></li>
-      {# <li><a href="{% url 'issue-index' %}">/Issue</a></li> #}
+      <li><a href="{% url 'thecode-index' %}">/Code</a></li>
       {% if not request.user.is_authenticated %}
         <li class="navbar-item-left">
           <a class="{% if al_login %}active{% endif %}" href="{% url 'account-login' %}">/LogIn</a>

@@ -7,7 +7,7 @@ class Tag(models.Model):
   """ Tag Model: Programming Language and NoN Programming Language
   """
   class Meta:
-    db_table = 'project_tag'
+    db_table = 'thecode__tag'
 
   id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
   name = models.CharField(max_length=50, blank=False, null=False)
@@ -21,7 +21,7 @@ class CodeType(models.Model):
   """ CodeType Model: project and issue
   """
   class Meta:
-    db_table = 'project_code_type'
+    db_table = 'thecode__code_type'
 
   id = models.AutoField(primary_key=True)
   name = models.CharField(max_length=50, blank=False, null=False)
@@ -34,7 +34,7 @@ class Code(models.Model):
   """ Code Model: Basic info about the Code and a *source to it
   """
   class Meta:
-    db_table = 'project_code'
+    db_table = 'thecode__code'
 
   id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
   type = models.ForeignKey(

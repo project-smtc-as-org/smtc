@@ -4,5 +4,5 @@ from . import views
 
 
 urlpatterns = [
-  path("", views.index, name="project-index"),
+  path("", views.index, name="thecode-index"),
 ]
