@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     # 'index',
     'account',
-    'project',
+    'thecode',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +61,7 @@ TEMPLATES = [
         'DIRS': [
             BASE_DIR / 'smtc' / 'templates',
             # 'account',
-            # 'project',
+            # 'thecode',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -128,7 +128,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'smtc' / 'static',
     # BASE_DIR / 'account',
-    # BASE_DIR / 'project',
+    # BASE_DIR / 'thecode',
 ]
 
 

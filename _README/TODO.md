@@ -1,7 +1,7 @@
 ```
 /         - dashboard (widgets)
 /account  - auth page
-/project  - project/issue page
+/code     - project/issue page
 ```
 
 ## The Site Page Template

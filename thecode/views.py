@@ -30,8 +30,9 @@ def index(request, code: int | None = None):
     request,
     'thecode/index.html',
     {
-      'code': code
+      'code': code,
       'codes': models.Code.objects.all().exclude(created_by=request.user),
       'tags': models.Tag.objects.all(),
+      'topics': models.Topic.objects.all(),
     }
   )

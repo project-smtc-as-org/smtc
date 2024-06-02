@@ -17,6 +17,20 @@ class Tag(models.Model):
     return self.name
 
 
+class Topic(models.Model):
+  """ Topic Model
+  """
+  class Meta:
+    db_table = 'thecode__topic'
+
+  id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+  name = models.CharField(max_length=50, blank=False, null=False)
+  description = models.TextField(blank=False, null=False)
+
+  def __str__(self):
+    return self.name
+
+
 class CodeType(models.Model):
   """ CodeType Model: project and issue
   """
@@ -57,9 +71,11 @@ class Code(models.Model):
   )
   follower = models.ManyToManyField(
     User,
+    blank=True,
     related_name='code_followed'
   )
   tag = models.ManyToManyField(Tag)
+  topic = models.ManyToManyField(Topic)
   created_at = models.DateTimeField(auto_now_add=True)
 
   def __str__(self):
